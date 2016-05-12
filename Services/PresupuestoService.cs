@@ -27,6 +27,7 @@ namespace Services
             }
             catch (Exception e)
             {
+                Console.WriteLine("Exception en ADD de presupuesto:"+e.ToString());
                 uow.RollBack();
             }
             finally

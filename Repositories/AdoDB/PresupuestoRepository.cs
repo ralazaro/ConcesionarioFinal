@@ -144,7 +144,7 @@ namespace Repositories
                             //p=new Presupuesto(reader.GetInt32(0), reader.GetString(1),reader.GetDecimal(2), miCliente, miVehiculo);
 
                             Vehiculo v = new Vehiculo(reader.GetInt32(3), "", "", 0);
-                            Cliente cl = new Cliente(reader.GetInt32(4), "", "", "", false);
+                            Cliente cl = new Cliente(reader.GetInt32(2), "", "", "", false);
                             double importe = reader.GetDouble(2);
                             string estado = reader.GetString(1);
                             p = new Presupuesto(id, estado, importe,cl,v);
@@ -231,12 +231,21 @@ namespace Repositories
                         while (reader.Read())
                         {                            
                             IClienteRepository rc = new ClienteRepository(sqlCon, sqlTran);
-                            Cliente c= rc.GetById(reader.GetInt32(3));
+                            Console.WriteLine("1");
+                            Console.WriteLine("reader.toString():"+reader.ToString());
+                            Cliente c= rc.GetById(reader.GetInt32(2));
+                            Console.WriteLine("2");
                             VehiculoRepository rv = new VehiculoRepository(sqlCon, sqlTran);
-                            Vehiculo v = rv.GetById(reader.GetInt32(4));
+                            Console.WriteLine("3");
+                            Vehiculo v = rv.GetById(reader.GetInt32(3));
+
+                            Console.WriteLine("4");
 
                             Presupuesto p = new Presupuesto(reader.GetInt32(0), reader.GetString(1), reader.GetDouble(2), c,v);
+                            Console.WriteLine("5");
+                            Console.WriteLine("presupuestos a añadir a la loista en GetAll() toString:" + p.ToString());
                             presupuestos.Add(p);
+                            Console.WriteLine("6");
                         }
                     }
                     else

@@ -188,7 +188,7 @@ namespace WForms
             //Console.WriteLine("Damos de alta a primer Presupuesto:" + nuevo.Id+", Raul, Lazaro Lopez,123456789, true");
             Console.WriteLine("Damos de alta el primer Presupuesto:" + nuevo.Id + "," + nuevo.Estado + "," + nuevo.Importe + "," + nuevo.Cliente.Id + "," + nuevo.Vehiculo.Id);
             //Damos de alta a otro Presupuesto
-            Presupuesto nuevo2 = new Presupuesto(2, "empezado", 200, miCliente, null);
+            Presupuesto nuevo2 = new Presupuesto(2, "empezado", 200, miCliente, miVehiculo);
             pService.Add(nuevo2);
             //Console.WriteLine("Damos de alta a segundo Presupuesto:" + nuevo2.Id + ",Paula,Lazaro Casado,987654321,false");
             //Console.WriteLine("Damos de alta el segundo Presupuesto:" + nuevo2.Id + "," + nuevo2.Estado + "," + nuevo2.Importe + "," + nuevo2.Cliente.Id + "," + nuevo2.Vehiculo.Id);
