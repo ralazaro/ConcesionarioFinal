@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,10 +50,12 @@
     <Compile Include="AdoDB\ClienteRepository.cs" />
     <Compile Include="AdoDB\PresupuestoRepository.cs" />
     <Compile Include="AdoDB\VehiculoRepository.cs" />
+    <Compile Include="Entity\ConcesionarioEntities.cs" />
+    <Compile Include="Entity\EFClienteRepository.cs" />
+    <Compile Include="Entity\EFPresupuestoRepository.cs" />
+    <Compile Include="Entity\EFVehiculoRepository.cs" />
+    <Compile Include="Entity\EntityUoW.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entity\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contracts\Contracts.csproj">
@@ -57,6 +66,10 @@
       <Project>{21ba030d-b8d7-4867-81db-914c0c664274}</Project>
       <Name>DomainModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
