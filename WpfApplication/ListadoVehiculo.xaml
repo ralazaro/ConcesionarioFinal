@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfApplication1.ListadoVehiculo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="ListadoVehiculos" Height="300" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>                       
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Filtro Id:"/>
+            <TextBox x:Name="txtFiltroId" Width="50"/>
+            <TextBlock Text="Filtro Marca:"/>
+            <TextBox x:Name="txtFiltroMarca" Width="100"/>
+            <Button x:Name="btnFiltro" Content="Filtrar" Click="btnFiltro_Click"/>
+        </StackPanel>
+        <DataGrid Grid.Row="1"  x:Name="dgVehiculos" IsReadOnly="True"/>
+        <StackPanel Grid.Row="2"  Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Right">
+            <Button x:Name="btnAltaVehiculo" Content="Alta Vehiculo" Margin="10" Click="btnAltaVehiculo_Click"/>
+            <Button x:Name="btnEliminarVehiculo" Content="Eliminar Vehiculo" Margin="10" Click="btnEliminarVehiculo_Click"/>
+            <Button x:Name="btnEditarVehiculo"  Content="Editar Vehiculo" Margin="10" Click="btnEditarVehiculo_Click"/>
+        </StackPanel>        
+    </Grid>
+</Window>
