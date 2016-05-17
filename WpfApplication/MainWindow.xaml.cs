@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,8 +21,15 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        IClienteService cService;
+        IVehiculoService vService;
+        IPresupuestoService pService;
+
+        public MainWindow(ClienteService cs, VehiculoService vs, PresupuestoService ps)
         {
+            this.cService = cs;
+            this.vService = vs;
+            this.pService = ps;
             InitializeComponent();
         }
 

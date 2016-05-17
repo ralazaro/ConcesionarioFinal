@@ -60,7 +60,7 @@ namespace WpfApplication1
 
         private void ActualizaGrid()
         {
-            var query = _unitOfWork.RVehiculos.GetAll;
+            var query = _unitOfWork.RVehiculos.GetAll();
             if (!string.IsNullOrEmpty(txtFiltroId.Text))
             {
                 var id = Convert.ToInt32(txtFiltroId.Text);
