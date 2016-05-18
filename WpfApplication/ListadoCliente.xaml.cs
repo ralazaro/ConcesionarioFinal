@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WpfApplication1
+namespace WpfApplication
 {
     /// <summary>
     /// Lógica de interacción para ListadoCliente.xaml
@@ -60,15 +60,14 @@ namespace WpfApplication1
 
         private void ActualizaGrid()
         {
-            var query = _unitOfWork.RClientes.GetAll();
+            var query = _unitOfWork.RClientes.GetAll();            
             if (!string.IsNullOrEmpty(txtFiltroId.Text))
             {
                 var id = Convert.ToInt32(txtFiltroId.Text);
                 query = query.Where(q => q.Id == id);
             }
             if (!string.IsNullOrEmpty(txtFiltroNombre.Text))
-                query = query.Where(q => q.Nombre.Contains(txtFiltroNombre.Text));
-
+                query = query.Where(q => q.Nombre.Contains(txtFiltroNombre.Text));            
             dgClientes.ItemsSource = query.ToList();
         }
 

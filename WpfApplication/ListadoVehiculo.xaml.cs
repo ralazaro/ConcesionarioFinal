@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WpfApplication1
+namespace WpfApplication
 {
     /// <summary>
     /// Lógica de interacción para ListadoVehiculo.xaml
@@ -60,15 +60,14 @@ namespace WpfApplication1
 
         private void ActualizaGrid()
         {
-            var query = _unitOfWork.RVehiculos.GetAll();
+            var query = _unitOfWork.RVehiculos.GetAll();            
             if (!string.IsNullOrEmpty(txtFiltroId.Text))
             {
                 var id = Convert.ToInt32(txtFiltroId.Text);
                 query = query.Where(q => q.Id == id);
             }
             if (!string.IsNullOrEmpty(txtFiltroMarca.Text))
-                query = query.Where(q => q.Marca.Contains(txtFiltroMarca.Text));
-
+                query = query.Where(q => q.Marca.Contains(txtFiltroMarca.Text));            
             dgVehiculos.ItemsSource = query.ToList();
         }
 

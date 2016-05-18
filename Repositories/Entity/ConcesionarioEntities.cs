@@ -14,15 +14,11 @@ namespace Repositories
         public DbSet<Presupuesto> Presupuestos { get; set; }
         public DbSet<Vehiculo> Vehiculos { get; set; }
 
-        //public ConcesionarioEntities() : base("Data Source=GAJOVA\\SQLEXPRESS; Integrated security=SSPI; Initial Catalog=Concesionario;") {}
         public ConcesionarioEntities() : base("Data Source=RulesMan;Initial Catalog=Concesionario;Integrated Security=True") { }
 
 
         static ConcesionarioEntities()
         {
-            // ROLA - This is a hack to ensure that Entity Framework SQL Provider is copied across to the output folder.
-            // As it is installed in the GAC, Copy Local does not work. It is required for probing.
-            // Fixed "Provider not loaded" error
             var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
 

@@ -22,7 +22,7 @@ namespace Repositories
         public EntityUoW()
         {
             Context = new ConcesionarioEntities();
-            Context.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
+            //Context.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
         }
 
         public void Comenzar()
@@ -61,7 +61,7 @@ namespace Repositories
 
         public void Terminar()
         {
-            //Context.Dispose();
+            Context.Dispose();
         }
 
     }

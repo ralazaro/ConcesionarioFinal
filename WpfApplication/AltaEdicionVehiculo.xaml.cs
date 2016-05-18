@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 
-namespace WpfApplication1
+namespace WpfApplication
 {
     /// <summary>
     /// Lógica de interacción para AltaEdicionVehiculo.xaml
