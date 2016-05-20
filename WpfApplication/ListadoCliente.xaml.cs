@@ -27,6 +27,7 @@ namespace WpfApplication
             InitializeComponent();
 
             _unitOfWork = new EntityUoW();
+            _unitOfWork.Comenzar();
             ActualizaGrid();
         }
 
@@ -64,10 +65,10 @@ namespace WpfApplication
             if (!string.IsNullOrEmpty(txtFiltroId.Text))
             {
                 var id = Convert.ToInt32(txtFiltroId.Text);
-                query = query.Where(q => q.Id == id);
+                query = query.Where(q => q.Id == id).ToList();
             }
             if (!string.IsNullOrEmpty(txtFiltroNombre.Text))
-                query = query.Where(q => q.Nombre.Contains(txtFiltroNombre.Text));            
+                query = query.Where(q => q.Nombre.Contains(txtFiltroNombre.Text)).ToList();            
             dgClientes.ItemsSource = query.ToList();
         }
 
