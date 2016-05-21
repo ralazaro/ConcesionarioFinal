@@ -17,6 +17,27 @@ namespace Services
             this.uow = uow;
         }
 
+        public Presupuesto Get(int id)
+        {
+            Presupuesto p = null;
+            try
+            {
+                uow.Comenzar();
+                p = uow.RPresupuestos.GetById(id);
+                uow.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                uow.RollBack();
+            }
+            finally
+            {
+                uow.Terminar();
+            }
+            return p;
+        }
+
         public void Add(Presupuesto t)
         {
             try
@@ -27,7 +48,7 @@ namespace Services
             }
             catch (Exception e)
             {
-                Console.WriteLine("Exception en ADD de presupuesto:"+e.ToString());
+                Console.WriteLine(e.ToString());
                 uow.RollBack();
             }
             finally
@@ -46,32 +67,13 @@ namespace Services
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 uow.RollBack();
             }
             finally
             {
                 uow.Terminar();
             }
-        }
-
-        public Presupuesto Get(int id)
-        {
-            Presupuesto p = null;
-            try
-            {
-                uow.Comenzar();
-                p = uow.RPresupuestos.GetById(id);
-                uow.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                uow.RollBack();
-            }
-            finally
-            {
-                uow.Terminar();
-            }
-            return p;
         }
 
         public ICollection<Presupuesto> GetAll()
@@ -85,6 +87,7 @@ namespace Services
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 uow.RollBack();
             }
             finally

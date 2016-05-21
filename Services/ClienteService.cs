@@ -1,6 +1,5 @@
 ﻿using Contracts;
 using DomainModel;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +17,27 @@ namespace Services
             this.uow = uow;
         }
 
+        public Cliente Get(int id)
+        {
+            Cliente c = null;
+            try
+            {
+                uow.Comenzar();
+                c = uow.RClientes.GetById(id);
+                uow.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                uow.RollBack();
+            }
+            finally
+            {
+                uow.Terminar();
+            }
+            return c;
+        }
+
         public void ModificarTelefono(Cliente c, string telefono)
         {
             try
@@ -29,6 +49,7 @@ namespace Services
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 uow.RollBack();
             }
             finally
@@ -48,6 +69,7 @@ namespace Services
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 uow.RollBack();
             }
             finally
@@ -67,6 +89,7 @@ namespace Services
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 uow.RollBack();
             }
             finally
@@ -87,6 +110,7 @@ namespace Services
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 uow.RollBack();
             }
             finally
@@ -105,32 +129,13 @@ namespace Services
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 uow.RollBack();
             }
             finally
             {
                 uow.Terminar();
             }
-        }
-
-        public Cliente Get(int id)
-        {
-            Cliente c = null;
-            try
-            {
-                uow.Comenzar();
-                c = uow.RClientes.GetById(id);
-                uow.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                uow.RollBack();
-            }
-            finally
-            {
-                uow.Terminar();
-            }
-            return c;
         }
 
         public ICollection<Cliente> GetAll()
@@ -144,6 +149,7 @@ namespace Services
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 uow.RollBack();
             }
             finally

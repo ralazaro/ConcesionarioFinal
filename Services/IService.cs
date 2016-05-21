@@ -8,10 +8,9 @@ namespace Services
 {
     public interface IService<T>
     {
+        T Get(int id);
         void Add(T t);
         void Remove(T t);
-        T Get(int id);
         ICollection<T> GetAll();
-
     }
 }

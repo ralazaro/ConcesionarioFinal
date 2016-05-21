@@ -17,6 +17,27 @@ namespace Services
             this.uow = uow;
         }
 
+        public Vehiculo Get(int id)
+        {
+            Vehiculo v = null;
+            try
+            {
+                uow.Comenzar();
+                v = uow.RVehiculos.GetById(id);
+                uow.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                uow.RollBack();
+            }
+            finally
+            {
+                uow.Terminar();
+            }
+            return v;
+        }
+
         public void AñadirPresupuesto(Vehiculo v, Presupuesto p)
         {
             try
@@ -28,6 +49,7 @@ namespace Services
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 uow.RollBack();
             }
             finally
@@ -47,6 +69,7 @@ namespace Services
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 uow.RollBack();
             }
             finally
@@ -67,6 +90,7 @@ namespace Services
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 uow.RollBack();
             }
             finally
@@ -85,32 +109,13 @@ namespace Services
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 uow.RollBack();
             }
             finally
             {
                 uow.Terminar();
             }
-        }
-
-        public Vehiculo Get(int id)
-        {
-            Vehiculo v = null;
-            try
-            {
-                uow.Comenzar();
-                v = uow.RVehiculos.GetById(id);
-                uow.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                uow.RollBack();
-            }
-            finally
-            {
-                uow.Terminar();
-            }
-            return v;
         }
 
         public ICollection<Vehiculo> GetAll()
@@ -124,6 +129,7 @@ namespace Services
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 uow.RollBack();
             }
             finally
@@ -132,6 +138,5 @@ namespace Services
             }
             return vehiculos;
         }
-
     }
 }

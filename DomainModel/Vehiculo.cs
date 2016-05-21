@@ -36,7 +36,13 @@ namespace DomainModel
 
         public override string ToString()
         {
-            return this.Id + " | " + Modelo + " | " + Marca + " | " + Potencia;
+            String veh=this.Id + "|" + Modelo + "|" + Marca + "|" + Potencia+":";
+            if (this.Presupuestos != null)
+                foreach (Presupuesto p in this.Presupuestos)
+                {
+                    veh = veh + "\r\n\t" + p.Id + "|" + p.Estado + "|" + p.Importe;
+                }
+            return veh;
         }
 
     }

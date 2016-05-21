@@ -16,7 +16,6 @@ namespace Repositories
 
         public ConcesionarioEntities() : base("Data Source=RulesMan;Initial Catalog=Concesionario;Integrated Security=True") { }
 
-
         static ConcesionarioEntities()
         {
             var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
@@ -24,9 +23,10 @@ namespace Repositories
 
         protected override void OnModelCreating(DbModelBuilder modelBuild)
         {
-            modelBuild.Entity<Presupuesto>().ToTable("Presupuestos");
-            modelBuild.Entity<Vehiculo>().ToTable("Vehiculos");
             modelBuild.Entity<Cliente>().ToTable("Clientes");
+            modelBuild.Entity<Vehiculo>().ToTable("Vehiculos");
+            modelBuild.Entity<Presupuesto>().ToTable("Presupuestos");
+
             Database.SetInitializer<ConcesionarioEntities>(null);
         }
     }

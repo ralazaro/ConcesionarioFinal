@@ -11,7 +11,6 @@ namespace Repositories
     public class EntityUoW : IUnitOfWork
     {
         ConcesionarioEntities Context;
-
         IClienteRepository rClientes;
         public IClienteRepository RClientes { get; set; }
         IVehiculoRepository rVehiculos;
@@ -22,7 +21,6 @@ namespace Repositories
         public EntityUoW()
         {
             Context = new ConcesionarioEntities();
-            //Context.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
         }
 
         public void Comenzar()
@@ -38,6 +36,7 @@ namespace Repositories
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
             }
         }
 
@@ -63,6 +62,5 @@ namespace Repositories
         {
             Context.Dispose();
         }
-
     }
 }

@@ -20,28 +20,23 @@ namespace Repositories
             this.context = context;
         }
 
-
-        public int GetId(Presupuesto p)
-        {
-            return p.Id;
-        }
-
-
-        public ICollection<Presupuesto> GetAll()
-        {
-            ICollection<Presupuesto> presupuestos;
-            presupuestos = context.Presupuestos.ToList();
-
-            return presupuestos;
-        }
-
-
         public Presupuesto GetById(int id)
         {
             Presupuesto p = context.Presupuestos.Find(id);
             return p;
         }
 
+        public int GetId(Presupuesto p)
+        {
+            return p.Id;
+        }
+
+        public ICollection<Presupuesto> GetAll()
+        {
+            ICollection<Presupuesto> presupuestos;
+            presupuestos = context.Presupuestos.ToList();
+            return presupuestos;
+        }
 
         public void Add(Presupuesto p)
         {

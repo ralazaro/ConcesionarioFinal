@@ -20,6 +20,12 @@ namespace Repositories
             this.context = context;
         }
 
+        public Cliente GetById(int id)
+        {
+            Cliente c = context.Clientes.Find(id);
+            return c;
+        }
+
         public int GetId(Cliente c)
         {
             return c.Id;
@@ -32,14 +38,6 @@ namespace Repositories
 
             return clientes;
         }
-
-
-        public Cliente GetById(int id)
-        {
-            Cliente c = context.Clientes.Find(id);
-            return c;
-        }
-
 
         public void Add(Cliente c)
         {

@@ -16,11 +16,11 @@ namespace Repositories
         public SqlConnection Cn { get; set; }
         public SqlTransaction T { get; set; }
         SqlTransaction t;
-        IClienteRepository rClientes = null;
+        //IClienteRepository rClientes = null;
         public IClienteRepository RClientes { get; set; }
-        IVehiculoRepository rVehiculos;
+        //IVehiculoRepository rVehiculos;
         public IVehiculoRepository RVehiculos { get; set; }
-        IPresupuestoRepository rPresupuestos;
+        //IPresupuestoRepository rPresupuestos;
         public IPresupuestoRepository RPresupuestos { get; set; }
 
         public AdoUnitOfWork(string cadenaConexion)

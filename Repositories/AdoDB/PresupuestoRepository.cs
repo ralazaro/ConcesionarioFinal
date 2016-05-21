@@ -46,27 +46,19 @@ namespace Repositories
                     sql.Parameters.AddWithValue(@"estado", p.Estado);
                     sql.Parameters.AddWithValue(@"importe", p.Importe);
                     sql.Parameters.AddWithValue(@"clienteId", p.Cliente.Id);
-                    Console.WriteLine("Llega aqui:");
                     if (p.Vehiculo!=null)
                         sql.Parameters.AddWithValue(@"vehiculoId", p.Vehiculo.Id);
                     else
                         sql.Parameters.AddWithValue(@"vehiculoId", null);
-                    Console.WriteLine("Llega aqui2:");
                     p.Id = Convert.ToInt32(sql.ExecuteScalar());
-                    Console.WriteLine("Añadido el presupuesto con id:"+p.Id);
-           
                     //sql.ExecuteNonQuery();
                 }
                 else
                 {
-                    Console.WriteLine("No hay datos QUE AÑADIR");
+                    Console.WriteLine("No hay datos que añadir");
                 }
             }
         }
-
-
-
-
 
         public void Update(Presupuesto p)
         {
@@ -80,7 +72,6 @@ namespace Repositories
                     sql.Parameters.AddWithValue(@"clienteId", p.Cliente.Id);
                     sql.Parameters.AddWithValue(@"vehiculoId", p.Vehiculo.Id);
                     //sql.Parameters.AddWithValue(@"id", p.Id);
-
                     sql.ExecuteNonQuery();
                 }
             }
@@ -124,34 +115,12 @@ namespace Repositories
                     {
                         while (reader.Read())
                         {
-                            /*
-                            //AdoUnitOfWork
-                            //deberia buscar el cliente y el vehiculo
-                            Contracts.IClienteRepository repositorioCliente = new DataLayer.ClienteRepository();
-                            Services.ClienteService servicioCliente = new Services.ClienteService(repositorioCliente);
-                            Contracts.IVehiculoRepository repositorioVehiculo = new DataLayer.VehiculoRepository();
-                            Services.VehiculoService servicioVehiculo = new Services.VehiculoService(repositorioVehiculo);
-
-                            DomainModel.Cliente miCliente = servicioCliente.buscarCliente((int)rdr[3]);
-                            DomainModel.Vehiculo miVehiculo = servicioVehiculo.buscarVehiculo((int)rdr[4]);
-
-
-                            IClienteRepository a=new ClienteRepository();
-                            */
-                            //de antes  p = new Presupuesto(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3));
-                            
-                            
-                            //p=new Presupuesto(reader.GetInt32(0), reader.GetString(1),reader.GetDecimal(2), miCliente, miVehiculo);
-
-                            Vehiculo v = new Vehiculo(reader.GetInt32(3), "", "", 0);
-                            Cliente cl = new Cliente(reader.GetInt32(2), "", "", "", false);
-                            double importe = reader.GetDouble(2);
-                            string estado = reader.GetString(1);
+                            Vehiculo v = new Vehiculo(reader.GetInt32(2), "", "", 0);
+                            Cliente cl = new Cliente(reader.GetInt32(1), "", "", "", false);
+                            double importe = reader.GetFloat(4);
+                            string estado = reader.GetString(3);
                             p = new Presupuesto(id, estado, importe,cl,v);
-
-
-                        }
-                        
+                        }                     
                         ClienteRepository rc = new ClienteRepository(sqlCon, sqlTran);
                         p.Cliente = rc.GetById(p.Cliente.Id);
                         VehiculoRepository rv = new VehiculoRepository(sqlCon, sqlTran);
@@ -165,57 +134,7 @@ namespace Repositories
                 }
             }
             return p;
-
-            /*
-            DomainModel.Presupuesto nuevo = null;
-            SqlDataReader rdr = null;
-            try
-            {
-
-                if (id != null)
-                {
-                    crearConexion();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conn;
-                    cmd.CommandText = "select * from dbo.Presupuestoes where id=@id";
-                    cmd.Parameters.AddWithValue(@"id", id);
-                    rdr = cmd.ExecuteReader();
-
-                    while (rdr.Read())
-                    {
-                        //deberia buscar el cliente y el vehiculo
-                        Contracts.IClienteRepository repositorioCliente = new DataLayer.ClienteRepository();
-                        Services.ClienteService servicioCliente = new Services.ClienteService(repositorioCliente);
-                        Contracts.IVehiculoRepository repositorioVehiculo = new DataLayer.VehiculoRepository();
-                        Services.VehiculoService servicioVehiculo = new Services.VehiculoService(repositorioVehiculo);
-
-                        DomainModel.Cliente miCliente = servicioCliente.buscarCliente((int)rdr[3]);
-                        DomainModel.Vehiculo miVehiculo = servicioVehiculo.buscarVehiculo((int)rdr[4]);
-
-                        nuevo = new DomainModel.Presupuesto((int)rdr[0], (string)rdr[1], (decimal)rdr[2], miCliente, miVehiculo);
-                    }
-                    cerrarConexion();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex);
-            }
-            finally
-            {
-                // close the reader
-                if (rdr != null)
-                {
-                    rdr.Close();
-                }
-
-                cerrarConexion();
-            }
-            return nuevo;*/
         }
-
-
-
 
         public ICollection<Presupuesto> GetAll()
         {
@@ -231,32 +150,20 @@ namespace Repositories
                         while (reader.Read())
                         {                            
                             IClienteRepository rc = new ClienteRepository(sqlCon, sqlTran);
-                            Console.WriteLine("1");
-                            Console.WriteLine("reader.toString():"+reader.ToString());
-                            
+                            /*
                             Console.WriteLine("reader.GetInt32(0):" + reader.GetInt32(0));
                             Console.WriteLine("reader.GetInt32(1):" + reader.GetInt32(1));
                             Console.WriteLine("reader.GetInt32(2):" + reader.GetInt32(2));
                             Console.WriteLine("reader.GetString(3):" + reader.GetString(3));
                             Console.WriteLine("reader.GetDouble(4):" + reader.GetDouble(4));
-                            
-
+                            */
                             Cliente c= rc.GetById(reader.GetInt32(1));
-                            Console.WriteLine("2");
                             VehiculoRepository rv = new VehiculoRepository(sqlCon, sqlTran);
-                            Console.WriteLine("3");
                             Vehiculo v = rv.GetById(reader.GetInt32(2));//cambiar esa numeracion esta mal es lo de terminado este 3
-
-                            Console.WriteLine("4");
-
-                            Console.WriteLine("cliente toString:" + c.ToString());
-                            Console.WriteLine("vehiculo toString:" + v.ToString());
-
-                            Presupuesto p = new Presupuesto(reader.GetInt32(0), reader.GetString(3), reader.GetDouble(4), c,v);
-                            Console.WriteLine("5");
-                            Console.WriteLine("presupuestos a añadir a la lista en GetAll() toString:" + p.ToString());
+                            //Console.WriteLine("cliente toString:" + c.ToString());
+                            //Console.WriteLine("vehiculo toString:" + v.ToString());
+                            Presupuesto p = new Presupuesto(reader.GetInt32(0), reader.GetString(3), reader.GetFloat (4), c,v);
                             presupuestos.Add(p);
-                            Console.WriteLine("6");
                         }
                     }
                     else
@@ -268,54 +175,5 @@ namespace Repositories
             }
             return presupuestos;
         }
-
-        /*
-        public ICollection<DomainModel.Presupuesto> findByAll()
-        {
-            ICollection<DomainModel.Presupuesto> listado = new List<DomainModel.Presupuesto>();
-            SqlDataReader rdr = null;
-            try
-            {
-                crearConexion();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = conn;
-                cmd.CommandText = "select * from dbo.Presupuestoes";
-                rdr = cmd.ExecuteReader();
-
-                while (rdr.Read())
-                {
-                    //deberia buscar el cliente y el vehiculo
-                    Contracts.IClienteRepository repositorioCliente = new DataLayer.ClienteRepository();
-                    Services.ClienteService servicioCliente = new Services.ClienteService(repositorioCliente);
-                    Contracts.IVehiculoRepository repositorioVehiculo = new DataLayer.VehiculoRepository();
-                    Services.VehiculoService servicioVehiculo = new Services.VehiculoService(repositorioVehiculo);
-
-                    DomainModel.Cliente miCliente = servicioCliente.buscarCliente((int)rdr[3]);
-                    DomainModel.Vehiculo miVehiculo = servicioVehiculo.buscarVehiculo((int)rdr[4]);
-
-
-                    DomainModel.Presupuesto nuevo = new DomainModel.Presupuesto((int)rdr[0], (string)rdr[1], (decimal)rdr[2], miCliente, miVehiculo);
-                    listado.Add(nuevo);
-                }
-                cerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex);
-            }
-            finally
-            {
-                // close the reader
-                if (rdr != null)
-                {
-                    rdr.Close();
-                }
-
-                cerrarConexion();
-            }
-            return listado;
-        }
-        */
-
     }
 }

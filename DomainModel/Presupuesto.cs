@@ -16,11 +16,12 @@ namespace DomainModel
 
         [ForeignKey("Cliente")]
         public int ClienteId { get; set; }
-        public virtual Vehiculo vehiculo { get; set; }
-
+        
         [ForeignKey("Vehiculo")]
         public int VehiculoId { get; set; }
+        
         public virtual Cliente cliente { get; set; }
+        public virtual Vehiculo vehiculo { get; set; }
 
         public Vehiculo Vehiculo
         {
@@ -68,9 +69,9 @@ namespace DomainModel
 
         public override string ToString()
         {
-            string s = "";
-            s = Id + " | " + Estado + " | " + Importe + "\r\n\t | " + Cliente + "\r\n\t | " + Vehiculo;
-            return s;
+            string pre = "";
+            pre = Id + "|" + Estado + "|" + Importe + ":\r\n\t|" + Cliente + "\r\n\t|" + Vehiculo;
+            return pre;
         }
     }
 }

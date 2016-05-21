@@ -38,7 +38,7 @@ namespace DomainModel
 
         public override String ToString()
         {
-            string cli = Id + " | " + Nombre + " | " + Apellidos + " | " + Telefono + " | " + Vip;
+            string cli = Id + "|" + Nombre + "|" + Apellidos + "|" + Telefono + "|" + Vip+":";
             if (this.Presupuestos != null)
                 foreach (Presupuesto p in this.Presupuestos)
                 {

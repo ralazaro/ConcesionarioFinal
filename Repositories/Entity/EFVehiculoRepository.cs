@@ -20,12 +20,16 @@ namespace Repositories
             this.context = context;
         }
 
+        public Vehiculo GetById(int id)
+        {
+            Vehiculo v = context.Vehiculos.Find(id);
+            return v;
+        }
 
         public int GetId(Vehiculo v)
         {
             return v.Id;
         }
-
 
         public ICollection<Vehiculo> GetAll()
         {
@@ -34,14 +38,6 @@ namespace Repositories
 
             return vehiculos;
         }
-
-
-        public Vehiculo GetById(int id)
-        {
-            Vehiculo v = context.Vehiculos.Find(id);
-            return v;
-        }
-
 
         public void Add(Vehiculo v)
         {

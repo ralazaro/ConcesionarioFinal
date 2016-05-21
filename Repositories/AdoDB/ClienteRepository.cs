@@ -120,7 +120,6 @@ namespace Repositories
                     sql.Parameters.AddWithValue("@apellidos", t.Apellidos);
                     sql.Parameters.AddWithValue("@telefono", t.Telefono);
                     sql.Parameters.AddWithValue("@vip", t.Vip);
-
                     sql.ExecuteNonQuery();
                 }
             }
