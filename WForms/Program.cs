@@ -18,7 +18,7 @@ namespace WForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            string cadCon = "Data Source=RulesMan;Initial Catalog=Concesionario;Integrated Security=True";
+            string cadCon = "Data Source=RulesMan;Initial Catalog=Concesionario;Integrated Security=True;MultipleActiveResultSets=True";
 
             AdoUnitOfWork auow = new AdoUnitOfWork(cadCon);
 

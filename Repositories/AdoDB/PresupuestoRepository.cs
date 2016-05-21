@@ -233,17 +233,28 @@ namespace Repositories
                             IClienteRepository rc = new ClienteRepository(sqlCon, sqlTran);
                             Console.WriteLine("1");
                             Console.WriteLine("reader.toString():"+reader.ToString());
-                            Cliente c= rc.GetById(reader.GetInt32(2));
+                            
+                            Console.WriteLine("reader.GetInt32(0):" + reader.GetInt32(0));
+                            Console.WriteLine("reader.GetInt32(1):" + reader.GetInt32(1));
+                            Console.WriteLine("reader.GetInt32(2):" + reader.GetInt32(2));
+                            Console.WriteLine("reader.GetString(3):" + reader.GetString(3));
+                            Console.WriteLine("reader.GetDouble(4):" + reader.GetDouble(4));
+                            
+
+                            Cliente c= rc.GetById(reader.GetInt32(1));
                             Console.WriteLine("2");
                             VehiculoRepository rv = new VehiculoRepository(sqlCon, sqlTran);
                             Console.WriteLine("3");
-                            Vehiculo v = rv.GetById(reader.GetInt32(3));
+                            Vehiculo v = rv.GetById(reader.GetInt32(2));//cambiar esa numeracion esta mal es lo de terminado este 3
 
                             Console.WriteLine("4");
 
-                            Presupuesto p = new Presupuesto(reader.GetInt32(0), reader.GetString(1), reader.GetDouble(2), c,v);
+                            Console.WriteLine("cliente toString:" + c.ToString());
+                            Console.WriteLine("vehiculo toString:" + v.ToString());
+
+                            Presupuesto p = new Presupuesto(reader.GetInt32(0), reader.GetString(3), reader.GetDouble(4), c,v);
                             Console.WriteLine("5");
-                            Console.WriteLine("presupuestos a añadir a la loista en GetAll() toString:" + p.ToString());
+                            Console.WriteLine("presupuestos a añadir a la lista en GetAll() toString:" + p.ToString());
                             presupuestos.Add(p);
                             Console.WriteLine("6");
                         }
