@@ -13,10 +13,10 @@
         </Menu>
         <Menu HorizontalAlignment="Left" Height="15" Margin="111,0,0,0" VerticalAlignment="Top" Width="100">
             <MenuItem x:Name="mnPresupuestos" Header="Presupuestos">
-                <MenuItem Header="Alta" HorizontalAlignment="Left" Width="140"/>
-                <MenuItem Header="Baja" HorizontalAlignment="Left" Width="140"/>
-                <MenuItem Header="Consultar" HorizontalAlignment="Left" Width="140"/>
-                <MenuItem Header="Listado" HorizontalAlignment="Left" Width="140"/>
+                <MenuItem x:Name="mnPresupuestosAlta"  Header="Alta" HorizontalAlignment="Left" Width="140" Click="mnPresupuestosAlta_Click"/>
+                <MenuItem x:Name="mnPresupuestosBaja"  Header="Baja" HorizontalAlignment="Left" Width="140" Click="mnPresupuestosBaja_Click"/>
+                <MenuItem x:Name="mnPresupuestosConsulta"  Header="Consultar" HorizontalAlignment="Left" Width="140" Click="mnPresupuestosConsulta_Click"/>
+                <MenuItem x:Name="mnPresupuestosListado"  Header="Listado" HorizontalAlignment="Left" Width="140" Click="mnPresupuestosListado_Click"/>
             </MenuItem>
         </Menu>
         <Menu HorizontalAlignment="Left" Height="15" VerticalAlignment="Top" Width="100" RenderTransformOrigin="2.348,0.389" Margin="211,0,0,0">

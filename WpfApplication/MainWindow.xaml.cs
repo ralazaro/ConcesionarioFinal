@@ -50,5 +50,25 @@ namespace WpfApplication
             ListadoVehiculo listadoVehiculo = new ListadoVehiculo();
             listadoVehiculo.ShowDialog();
         }
+
+        private void mnPresupuestosAlta_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void mnPresupuestosBaja_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void mnPresupuestosConsulta_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void mnPresupuestosListado_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
