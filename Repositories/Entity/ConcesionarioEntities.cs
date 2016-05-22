@@ -14,7 +14,8 @@ namespace Repositories
         public DbSet<Presupuesto> Presupuestos { get; set; }
         public DbSet<Vehiculo> Vehiculos { get; set; }
 
-        public ConcesionarioEntities() : base("Data Source=RulesMan;Initial Catalog=Concesionario;Integrated Security=True") { }
+        //public ConcesionarioEntities() : base("Data Source=RulesMan;Initial Catalog=Concesionario;Integrated Security=True") { }
+        public ConcesionarioEntities() : base(@"Data Source=.\sqlexpress;Initial Catalog=ConcesionarioRul;Integrated Security=True") { }
 
 
         static ConcesionarioEntities()
