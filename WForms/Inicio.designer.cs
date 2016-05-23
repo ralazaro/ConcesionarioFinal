@@ -40,22 +40,20 @@ namespace WForms
             this.btnPresupuesto = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.actualizarTeléfonoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.obtenerClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.añadirPresupuestoAClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bajaClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.bajaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.obtenerVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bajaVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoVehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.presupuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.bajaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.obtenerPrespuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaPresupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bajaPresupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarPresupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoPresupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,122 +102,119 @@ namespace WForms
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaToolStripMenuItem,
-            this.bajaToolStripMenuItem,
-            this.actualizarTeléfonoToolStripMenuItem,
-            this.obtenerClienteToolStripMenuItem,
-            this.añadirPresupuestoAClienteToolStripMenuItem,
-            this.listadoToolStripMenuItem});
+            this.altaClienteToolStripMenuItem,
+            this.bajaClienteToolStripMenuItem,
+            this.modificarClienteToolStripMenuItem,
+            this.listadoClienteToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
-            // altaToolStripMenuItem
+            // altaClienteToolStripMenuItem
             // 
-            this.altaToolStripMenuItem.Name = "altaToolStripMenuItem";
-            this.altaToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.altaToolStripMenuItem.Text = "Alta";
-            this.altaToolStripMenuItem.Click += new System.EventHandler(this.altaToolStripMenuItem_Click);
+            this.altaClienteToolStripMenuItem.Name = "altaClienteToolStripMenuItem";
+            this.altaClienteToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.altaClienteToolStripMenuItem.Text = "Alta";
+            this.altaClienteToolStripMenuItem.Click += new System.EventHandler(this.altaClienteToolStripMenuItem_Click);
             // 
-            // bajaToolStripMenuItem
+            // bajaClienteToolStripMenuItem
             // 
-            this.bajaToolStripMenuItem.Name = "bajaToolStripMenuItem";
-            this.bajaToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.bajaToolStripMenuItem.Text = "Baja";
+            this.bajaClienteToolStripMenuItem.Name = "bajaClienteToolStripMenuItem";
+            this.bajaClienteToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.bajaClienteToolStripMenuItem.Text = "Baja";
+            this.bajaClienteToolStripMenuItem.Click += new System.EventHandler(this.bajaToolStripMenuItem_Click);
             // 
-            // actualizarTeléfonoToolStripMenuItem
+            // modificarClienteToolStripMenuItem
             // 
-            this.actualizarTeléfonoToolStripMenuItem.Name = "actualizarTeléfonoToolStripMenuItem";
-            this.actualizarTeléfonoToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.actualizarTeléfonoToolStripMenuItem.Text = "Actualizar Teléfono";
+            this.modificarClienteToolStripMenuItem.Name = "modificarClienteToolStripMenuItem";
+            this.modificarClienteToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.modificarClienteToolStripMenuItem.Text = "Modificar";
+            this.modificarClienteToolStripMenuItem.Click += new System.EventHandler(this.modificarClienteToolStripMenuItem_Click);
             // 
-            // obtenerClienteToolStripMenuItem
+            // listadoClienteToolStripMenuItem
             // 
-            this.obtenerClienteToolStripMenuItem.Name = "obtenerClienteToolStripMenuItem";
-            this.obtenerClienteToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.obtenerClienteToolStripMenuItem.Text = "Obtener cliente";
-            // 
-            // añadirPresupuestoAClienteToolStripMenuItem
-            // 
-            this.añadirPresupuestoAClienteToolStripMenuItem.Name = "añadirPresupuestoAClienteToolStripMenuItem";
-            this.añadirPresupuestoAClienteToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.añadirPresupuestoAClienteToolStripMenuItem.Text = "Añadir presupuesto a cliente";
-            // 
-            // listadoToolStripMenuItem
-            // 
-            this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
-            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.listadoToolStripMenuItem.Text = "Listado";
+            this.listadoClienteToolStripMenuItem.Name = "listadoClienteToolStripMenuItem";
+            this.listadoClienteToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.listadoClienteToolStripMenuItem.Text = "Listado";
+            this.listadoClienteToolStripMenuItem.Click += new System.EventHandler(this.listadoClienteToolStripMenuItem_Click);
             // 
             // vehiculosToolStripMenuItem
             // 
             this.vehiculosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaToolStripMenuItem1,
-            this.bajaToolStripMenuItem1,
-            this.obtenerVehiculoToolStripMenuItem,
-            this.listadoToolStripMenuItem1});
+            this.altaVehiculoToolStripMenuItem,
+            this.bajaVehiculoToolStripMenuItem,
+            this.modificarVehiculoToolStripMenuItem,
+            this.listadoVehiculoToolStripMenuItem});
             this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
             this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.vehiculosToolStripMenuItem.Text = "Vehiculos";
             // 
-            // altaToolStripMenuItem1
+            // altaVehiculoToolStripMenuItem
             // 
-            this.altaToolStripMenuItem1.Name = "altaToolStripMenuItem1";
-            this.altaToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
-            this.altaToolStripMenuItem1.Text = "Alta";
+            this.altaVehiculoToolStripMenuItem.Name = "altaVehiculoToolStripMenuItem";
+            this.altaVehiculoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.altaVehiculoToolStripMenuItem.Text = "Alta";
+            this.altaVehiculoToolStripMenuItem.Click += new System.EventHandler(this.altaVehiculoToolStripMenuItem_Click);
             // 
-            // bajaToolStripMenuItem1
+            // bajaVehiculoToolStripMenuItem
             // 
-            this.bajaToolStripMenuItem1.Name = "bajaToolStripMenuItem1";
-            this.bajaToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
-            this.bajaToolStripMenuItem1.Text = "Baja";
+            this.bajaVehiculoToolStripMenuItem.Name = "bajaVehiculoToolStripMenuItem";
+            this.bajaVehiculoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bajaVehiculoToolStripMenuItem.Text = "Baja";
+            this.bajaVehiculoToolStripMenuItem.Click += new System.EventHandler(this.bajaVehiculoToolStripMenuItem_Click);
             // 
-            // obtenerVehiculoToolStripMenuItem
+            // modificarVehiculoToolStripMenuItem
             // 
-            this.obtenerVehiculoToolStripMenuItem.Name = "obtenerVehiculoToolStripMenuItem";
-            this.obtenerVehiculoToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.obtenerVehiculoToolStripMenuItem.Text = "Obtener vehiculo";
+            this.modificarVehiculoToolStripMenuItem.Name = "modificarVehiculoToolStripMenuItem";
+            this.modificarVehiculoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.modificarVehiculoToolStripMenuItem.Text = "Modificar";
+            this.modificarVehiculoToolStripMenuItem.Click += new System.EventHandler(this.modificarVehiculoToolStripMenuItem_Click);
             // 
-            // listadoToolStripMenuItem1
+            // listadoVehiculoToolStripMenuItem
             // 
-            this.listadoToolStripMenuItem1.Name = "listadoToolStripMenuItem1";
-            this.listadoToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
-            this.listadoToolStripMenuItem1.Text = "Listado";
+            this.listadoVehiculoToolStripMenuItem.Name = "listadoVehiculoToolStripMenuItem";
+            this.listadoVehiculoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.listadoVehiculoToolStripMenuItem.Text = "Listado";
+            this.listadoVehiculoToolStripMenuItem.Click += new System.EventHandler(this.listadoVehiculoToolStripMenuItem_Click);
             // 
             // presupuestosToolStripMenuItem
             // 
             this.presupuestosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaToolStripMenuItem2,
-            this.bajaToolStripMenuItem2,
-            this.obtenerPrespuestoToolStripMenuItem,
-            this.listadoToolStripMenuItem2});
+            this.altaPresupuestoToolStripMenuItem,
+            this.bajaPresupuestoToolStripMenuItem,
+            this.modificarPresupuestoToolStripMenuItem,
+            this.listadoPresupuestoToolStripMenuItem});
             this.presupuestosToolStripMenuItem.Name = "presupuestosToolStripMenuItem";
             this.presupuestosToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
             this.presupuestosToolStripMenuItem.Text = "Presupuestos";
             // 
-            // altaToolStripMenuItem2
+            // altaPresupuestoToolStripMenuItem
             // 
-            this.altaToolStripMenuItem2.Name = "altaToolStripMenuItem2";
-            this.altaToolStripMenuItem2.Size = new System.Drawing.Size(185, 22);
-            this.altaToolStripMenuItem2.Text = "Alta";
+            this.altaPresupuestoToolStripMenuItem.Name = "altaPresupuestoToolStripMenuItem";
+            this.altaPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.altaPresupuestoToolStripMenuItem.Text = "Alta";
+            this.altaPresupuestoToolStripMenuItem.Click += new System.EventHandler(this.altaPresupuestoToolStripMenuItem_Click);
             // 
-            // bajaToolStripMenuItem2
+            // bajaPresupuestoToolStripMenuItem
             // 
-            this.bajaToolStripMenuItem2.Name = "bajaToolStripMenuItem2";
-            this.bajaToolStripMenuItem2.Size = new System.Drawing.Size(185, 22);
-            this.bajaToolStripMenuItem2.Text = "Baja";
+            this.bajaPresupuestoToolStripMenuItem.Name = "bajaPresupuestoToolStripMenuItem";
+            this.bajaPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bajaPresupuestoToolStripMenuItem.Text = "Baja";
+            this.bajaPresupuestoToolStripMenuItem.Click += new System.EventHandler(this.bajaPresupuestoToolStripMenuItem_Click);
             // 
-            // obtenerPrespuestoToolStripMenuItem
+            // modificarPresupuestoToolStripMenuItem
             // 
-            this.obtenerPrespuestoToolStripMenuItem.Name = "obtenerPrespuestoToolStripMenuItem";
-            this.obtenerPrespuestoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.obtenerPrespuestoToolStripMenuItem.Text = "Obtener presupuesto";
+            this.modificarPresupuestoToolStripMenuItem.Name = "modificarPresupuestoToolStripMenuItem";
+            this.modificarPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.modificarPresupuestoToolStripMenuItem.Text = "Modificar";
+            this.modificarPresupuestoToolStripMenuItem.Click += new System.EventHandler(this.modificarPresupuestoToolStripMenuItem_Click);
             // 
-            // listadoToolStripMenuItem2
+            // listadoPresupuestoToolStripMenuItem
             // 
-            this.listadoToolStripMenuItem2.Name = "listadoToolStripMenuItem2";
-            this.listadoToolStripMenuItem2.Size = new System.Drawing.Size(185, 22);
-            this.listadoToolStripMenuItem2.Text = "Listado";
+            this.listadoPresupuestoToolStripMenuItem.Name = "listadoPresupuestoToolStripMenuItem";
+            this.listadoPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.listadoPresupuestoToolStripMenuItem.Text = "Listado";
+            this.listadoPresupuestoToolStripMenuItem.Click += new System.EventHandler(this.listadoPresupuestoToolStripMenuItem_Click);
             // 
             // Inicio
             // 
@@ -247,22 +242,20 @@ namespace WForms
         private System.Windows.Forms.Button btnPresupuesto;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bajaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem actualizarTeléfonoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem obtenerClienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem añadirPresupuestoAClienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bajaClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vehiculosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem bajaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem obtenerVehiculoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem altaVehiculoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bajaVehiculoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarVehiculoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoVehiculoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem presupuestosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem bajaToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem obtenerPrespuestoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem altaPresupuestoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bajaPresupuestoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarPresupuestoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoPresupuestoToolStripMenuItem;
     }
 }
 

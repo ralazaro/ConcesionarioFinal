@@ -33,7 +33,7 @@ namespace WpfApplication
             InitializeComponent();
         }
 
-        private void mnListado_Click(object sender, RoutedEventArgs e)
+        private void mnClientes_Click(object sender, RoutedEventArgs e)
         {
             ListadoCliente listadoCliente = new ListadoCliente();
             listadoCliente.ShowDialog();
@@ -43,6 +43,12 @@ namespace WpfApplication
         {
             ListadoCliente listadoCliente = new ListadoCliente();
             listadoCliente.ShowDialog();
+        }
+
+        private void mnVehiculos_Click(object sender, RoutedEventArgs e)
+        {
+            ListadoVehiculo listadoVehiculo = new ListadoVehiculo();
+            listadoVehiculo.ShowDialog();
         }
 
         private void btnVehiculos_Click(object sender, RoutedEventArgs e)
@@ -61,7 +67,7 @@ namespace WpfApplication
 
         }
 
-        private void mnPresupuestosConsulta_Click(object sender, RoutedEventArgs e)
+        private void mnPresupuestosModificar_Click(object sender, RoutedEventArgs e)
         {
 
         }

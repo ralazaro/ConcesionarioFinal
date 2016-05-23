@@ -34,12 +34,11 @@ namespace WForms
             vService = vs;
         }
 
-        private void altaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void altaClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            btnCliente_Click(sender, e);
         }
         
-
         private void btnCliente_Click(object sender, EventArgs e)
         {
 
@@ -195,5 +194,61 @@ namespace WForms
             pService.Remove(nuevo2);
             Console.WriteLine("El Presupuesto borrado con toString:" + nuevo2.ToString());           
         }
+
+        private void bajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnCliente_Click(sender, e);
+        }
+
+        private void modificarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnCliente_Click(sender, e);
+        }
+
+        private void listadoClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnCliente_Click(sender, e);
+        }
+
+        private void altaVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnVehiculo_Click(sender, e);
+        }
+
+        private void bajaVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnVehiculo_Click(sender, e);
+        }
+
+        private void modificarVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnVehiculo_Click(sender, e);
+        }
+
+        private void listadoVehiculoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnVehiculo_Click(sender, e);
+        }
+
+        private void altaPresupuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnPresupuesto_Click(sender, e);
+        }
+
+        private void bajaPresupuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnPresupuesto_Click(sender, e);
+        }
+
+        private void modificarPresupuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnPresupuesto_Click(sender, e);
+        }
+
+        private void listadoPresupuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnPresupuesto_Click(sender, e);
+        }
+
     }
 }

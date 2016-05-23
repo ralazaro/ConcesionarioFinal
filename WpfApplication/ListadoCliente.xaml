@@ -21,6 +21,7 @@
         </StackPanel>
         <DataGrid Grid.Row="1"  x:Name="dgClientes" IsReadOnly="True" AutoGenerateColumns="false">
             <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
                 <DataGridTextColumn Header="Apellidos" Binding="{Binding Apellidos}" />
                 <DataGridTextColumn Header="Telefono" Binding="{Binding Telefono}" />
